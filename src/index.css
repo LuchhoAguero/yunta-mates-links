@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ── Design tokens — paleta adaptada al logo Yunta Mates ─────── */
+:root {
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  /* Verde salvia/musgo del logo */
+  --color-bg-deep:    #0c1209;
+  --color-bg-dark:    #111a0e;
+  --color-verde-900:  #0f1e0c;
+  --color-verde-700:  #1e3a18;
+  --color-verde-500:  #3a6130;
+  --color-verde-400:  #4d7a42;
+  --color-verde-300:  #6b8f5e;  /* verde salvia del logo */
+  --color-verde-200:  #8aaa7c;
+  --color-verde-100:  #b4c9a8;
+  --color-oro-500:    #a07c2e;
+  --color-oro-400:    #c09840;
+  --color-oro-300:    #d4ae5a;
+  --color-marron-900: #1a1208;
+  --color-marron-600: #4a3018;
+  --color-text-primary:   #f2ede5;
+  --color-text-secondary: #b4ab96;
+  --color-text-muted:     #7a7264;
+  --color-glass-bg:       rgba(12, 28, 10, 0.60);
+  --color-glass-border:   rgba(107, 143, 94, 0.20);
+  --color-glass-shadow:   rgba(0, 0, 0, 0.60);
+  --color-logo-green:     #6b7d5b;
+}
+
+/* ── Base reset ──────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus visible ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-verde-300);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── Scrollbar sutil ─────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-bg-deep); }
+::-webkit-scrollbar-thumb  { background: var(--color-verde-700); border-radius: 3px; }
+
+/* ── Utilidad tipográfica ────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+
+/* ── Glassmorphism card ──────────────────────────────────────── */
+.glass-card {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  box-shadow:
+    0 8px 48px var(--color-glass-shadow),
+    inset 0 1px 0 rgba(178, 200, 160, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Botón principal ─────────────────────────────────────────── */
+.btn-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(107, 143, 94, 0.25);
+  background: rgba(30, 58, 24, 0.45);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.15s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-main:hover {
+  background: rgba(58, 97, 48, 0.55);
+  border-color: rgba(107, 143, 94, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(107, 143, 94, 0.22),
+    0 4px 20px rgba(58, 97, 48, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-main:active {
+  transform: translateY(0) scale(0.985);
+  box-shadow: none;
+}
+
+.btn-main--store {
+  background: rgba(42, 65, 32, 0.4);
+  border-color: rgba(160, 124, 46, 0.35);
+}
+
+.btn-main--store:hover {
+  background: rgba(58, 97, 48, 0.55);
+  border-color: rgba(212, 174, 90, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(212, 174, 90, 0.2),
+    0 4px 20px rgba(160, 124, 46, 0.2);
+}
+
+.btn-main .btn-icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.btn-main .btn-chevron {
+  margin-left: auto;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-main:hover .btn-chevron {
+  opacity: 0.7;
+  transform: translateX(3px);
+}
+
+/* ── Acordeón ────────────────────────────────────────────────── */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(12, 28, 10, 0.4);
+  border: 1px solid rgba(107, 143, 94, 0.18);
+  border-radius: 12px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.accordion-trigger:hover {
+  background: rgba(30, 58, 24, 0.5);
+  border-color: rgba(107, 143, 94, 0.35);
+  color: var(--color-text-primary);
+}
+
+.accordion-trigger .acc-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-trigger[aria-expanded="true"] .acc-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+}
+
+/* ── Badge ───────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(160, 124, 46, 0.12);
+  border: 1px solid rgba(212, 174, 90, 0.28);
+  color: var(--color-oro-300);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ── Fondo general ───────────────────────────────────────────── */
+.scene-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 65% 45% at 25% 20%,
+      rgba(58, 97, 48, 0.22) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 55% at 78% 78%,
+      rgba(26, 18, 8, 0.35) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      160deg,
+      #0c1209 0%,
+      #0f1a0c 35%,
+      #10140a 65%,
+      #0e1208 100%
+    );
+}
+
+/* ── Imágenes flotantes de fondo ─────────────────────────────── */
+/*
+  mix-blend-mode: multiply hace que el blanco se vuelva transparente
+  sobre fondos oscuros, dejando sólo el objeto visible.
+  Para imágenes muy saturadas (yerbas) usamos screen para más sutileza.
+*/
+.floating-product {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: brightness(0.55) saturate(0.75);
+  will-change: transform, opacity;
+}
+
+.floating-product--warm {
+  /* para mate+termo e ilustraciones cálidas */
+  mix-blend-mode: screen;
+  filter: brightness(0.5) saturate(0.65) sepia(0.15);
+}
+
+.floating-product--canasta {
+  /* canasta de cuero negro — multiplicar funciona bien */
+  mix-blend-mode: screen;
+  filter: brightness(0.45) saturate(0.5);
+}
+
+/* ── Foco en links/botones ───────────────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-verde-300);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* ── prefers-reduced-motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .floating-product {
+    animation: none !important;
+  }
+}
