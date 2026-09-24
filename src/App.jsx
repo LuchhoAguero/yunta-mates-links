@@ -4,7 +4,7 @@
  * Para cambiar los enlaces o puntos de retiro, editá src/links.js.
  */
 import { motion } from "framer-motion";
-import { Store, MessageCircle, Truck } from "lucide-react";
+import { Store, Truck } from "lucide-react";
 
 import { LINKS } from "./links.js";
 import SceneBackground from "./components/SceneBackground";
@@ -29,6 +29,22 @@ function InstagramIcon({ size = 16 }) {
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/* WhatsApp SVG — ícono oficial de marca, dibujado desde cero */
+function WhatsAppIcon({ size = 20 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.06L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.07 13.72c-.22.62-1.28 1.18-1.77 1.22-.45.04-.87.2-2.93-.61-2.47-1-4.03-3.52-4.15-3.68-.12-.17-.99-1.32-.99-2.52 0-1.2.63-1.79.85-2.04.22-.24.48-.3.64-.3l.46.01c.15 0 .35-.06.55.42l.7 1.7c.07.16.12.34.02.54l-.3.46-.42.46c-.14.14-.29.3-.12.58.17.28.74 1.22 1.59 1.97 1.09.97 2.01 1.27 2.3 1.41.28.14.44.12.6-.07l.75-.88c.16-.2.32-.14.54-.05l1.73.81c.2.1.34.14.39.22.05.08.05.47-.17 1.09Z"/>
     </svg>
   );
 }
@@ -199,13 +215,13 @@ export default function App() {
               />
               <LinkButton
                 href={LINKS.whatsappLucho}
-                icon={MessageCircle}
+                icon={WhatsAppIcon}
                 label="WhatsApp · Lucho"
                 sublabel="Consultas y pedidos"
               />
               <LinkButton
                 href={LINKS.whatsappMarti}
-                icon={MessageCircle}
+                icon={WhatsAppIcon}
                 label="WhatsApp · Marti"
                 sublabel="Consultas y pedidos"
               />
