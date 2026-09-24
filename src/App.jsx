@@ -85,7 +85,8 @@ export default function App() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding: "clamp(1.25rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem)",
+          /* padding-x: mínimo 1rem fijo para no rozar los bordes en 360px */
+          padding: "clamp(1rem, 4vw, 2rem) clamp(1rem, 3.5vw, 1.5rem)",
         }}
       >
         <motion.div
@@ -182,10 +183,15 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Badge */}
-              <div className="badge">
-                <Truck size={13} strokeWidth={2} aria-hidden="true" />
-                Envíos a todo el país  y retiro gratis en zona este  de mendoza
+              {/* Badges — dos líneas cortas en lugar de una larga */}
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+                <div className="badge">
+                  <Truck size={13} strokeWidth={2} aria-hidden="true" />
+                  Envíos a todo el país
+                </div>
+                <div className="badge">
+                  Retiro gratis · zona este Mendoza
+                </div>
               </div>
             </motion.header>
 
