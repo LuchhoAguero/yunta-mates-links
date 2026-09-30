@@ -3,10 +3,15 @@
  * Cambiá los valores aquí para actualizar toda la landing.
  */
 
+function whatsappLink(phone, name) {
+  const message = `¡Hola, ${name}! 👋 Vi la página de Yunta Mates y quería consultar por sus productos y las opciones de envío o retiro. 🧉`;
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+}
+
 export const LINKS = {
   store: "https://yuntamates.com",
-  whatsappLucho: "https://wa.me/5492634621194",
-  whatsappMarti: "https://wa.me/5492634673921",
+  whatsappLucho: whatsappLink("5492634621194", "Lucho"),
+  whatsappMarti: whatsappLink("5492634673921", "Marti"),
   instagram: "https://instagram.com/yuntamates_",
 };
 

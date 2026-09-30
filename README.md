@@ -70,8 +70,8 @@ Abrí **`src/links.js`** — es el **único archivo que necesitás editar**:
 ```js
 export const LINKS = {
   store:         "https://yuntamates.com",
-  whatsappLucho: "https://wa.me/5492634621194",   // ← número de Lucho
-  whatsappMarti: "https://wa.me/5492634673921",   // ← número de Marti
+  whatsappLucho: whatsappLink("5492634621194", "Lucho"),
+  whatsappMarti: whatsappLink("5492634673921", "Marti"),
   instagram:     "https://instagram.com/yuntamates_",
 };
 
@@ -82,6 +82,8 @@ export const PICKUP_LOCATIONS = [
   "Coordinamos tu punto por WhatsApp",
 ];
 ```
+
+Los botones de WhatsApp abren el chat con un saludo personalizado y una consulta por productos, envío o retiro. La persona puede editar el texto antes de enviarlo; no se envía automáticamente. Para cambiar el mensaje, editá `message` dentro de la función `whatsappLink` en `src/links.js`.
 
 ### Cambiar imágenes de fondo o sus posiciones
 
