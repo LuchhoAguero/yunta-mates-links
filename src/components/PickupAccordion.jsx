@@ -5,7 +5,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ChevronDown, Check } from "lucide-react";
-import { PICKUP_LOCATIONS } from "../links.js";
+import { LINKS, PICKUP_LOCATIONS } from "../links.js";
+import LinkButton from "./LinkButton";
 
 export default function PickupAccordion() {
   const [open, setOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function PickupAccordion() {
           style={{ color: "var(--color-verde-300)", flexShrink: 0 }}
           aria-hidden="true"
         />
-        <span style={{ flex: 1 }}>Retiro gratis en puntos seleccionados</span>
+        <span style={{ flex: 1 }}>Ver puntos de retiro gratis</span>
         <ChevronDown
           size={16}
           strokeWidth={2}
@@ -79,6 +80,12 @@ export default function PickupAccordion() {
                 </li>
               ))}
             </ul>
+            <div className="pickup-contact">
+              <p>Consultar por un retiro</p>
+              <p className="pickup-help">Coordiná el punto y el horario por WhatsApp con cualquiera de los dos.</p>
+              <LinkButton href={LINKS.pickupLucho} label="Consultar con Lucho" />
+              <LinkButton href={LINKS.pickupMarti} label="Consultar con Marti" />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

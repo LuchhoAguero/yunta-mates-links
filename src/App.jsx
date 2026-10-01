@@ -215,10 +215,13 @@ export default function App() {
               <LinkButton
                 href={LINKS.store}
                 icon={Store}
-                label="Conocé nuestra tienda"
-                sublabel="yuntamates.com"
+                label="Ver productos y comprar"
+                sublabel="Explorá el catálogo en nuestra tienda"
                 variant="store"
               />
+              <p className="contact-intro">
+                ¿Tenés una consulta? Escribinos a cualquiera de los dos.
+              </p>
               <LinkButton
                 href={LINKS.whatsappLucho}
                 icon={WhatsAppIcon}

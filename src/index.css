@@ -120,16 +120,45 @@ body {
 }
 
 .btn-main--store {
-  background: rgba(42, 65, 32, 0.4);
-  border-color: rgba(160, 124, 46, 0.35);
+  background: #3a6130;
+  border-color: var(--color-oro-300);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
 }
 
 .btn-main--store:hover {
-  background: rgba(58, 97, 48, 0.55);
+  background: #34572b;
   border-color: rgba(212, 174, 90, 0.5);
   box-shadow:
     0 0 0 1px rgba(212, 174, 90, 0.2),
     0 4px 20px rgba(160, 124, 46, 0.2);
+}
+
+.btn-sublabel {
+  color: var(--color-text-secondary);
+}
+
+.btn-main--store .btn-sublabel {
+  color: var(--color-text-primary);
+}
+
+.contact-intro {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pickup-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0.75rem 0.25rem 0.25rem;
+  font-size: 0.875rem;
+}
+
+.pickup-help {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
 }
 
 .btn-main .btn-icon {

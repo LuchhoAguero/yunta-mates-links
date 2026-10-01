@@ -30,10 +30,10 @@ export default function LinkButton({
         <span style={{ display: "block", fontWeight: 500 }}>{label}</span>
         {sublabel && (
           <span
+            className="btn-sublabel"
             style={{
               display: "block",
               fontSize: "0.75rem",
-              opacity: 0.55,
               marginTop: "1px",
             }}
           >

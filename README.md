@@ -72,6 +72,8 @@ export const LINKS = {
   store:         "https://yuntamates.com",
   whatsappLucho: whatsappLink("5492634621194", "Lucho"),
   whatsappMarti: whatsappLink("5492634673921", "Marti"),
+  pickupLucho: whatsappLink("5492634621194", "Lucho", true),
+  pickupMarti: whatsappLink("5492634673921", "Marti", true),
   instagram:     "https://instagram.com/yuntamates_",
 };
 
@@ -79,11 +81,12 @@ export const PICKUP_LOCATIONS = [
   "Almirante Brown 176, centro de San Martín, Mendoza",
   "Calle Irrazabal s/n, Alto Verde (entrega inmediata)",
   "Calle Santa Cruz, Ing. Giagnoni",
-  "Coordinamos tu punto por WhatsApp",
 ];
 ```
 
 Los botones de WhatsApp abren el chat con un saludo personalizado y una consulta por productos, envío o retiro. La persona puede editar el texto antes de enviarlo; no se envía automáticamente. Para cambiar el mensaje, editá `message` dentro de la función `whatsappLink` en `src/links.js`.
+
+Dentro de los puntos de retiro, los botones de Lucho y Marti usan un mensaje específico para consultar por el punto y el horario. El tercer argumento `true` de `whatsappLink` selecciona ese mensaje.
 
 ### Cambiar imágenes de fondo o sus posiciones
 
